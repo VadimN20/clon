@@ -2,12 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="public/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="src/app.css">
     <title>Vite + Svelte + TS</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app">
+      <form class="rate">
+        <input id="input" type="number" bind:value = {input} min = "0" max = "9999999999"/>
+        <select id="rate1" name="rate1">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="RUB" selected>RUB</option>
+        </select>
+      </form>
+
+
+      <form class="rate">
+        <input id="result" type="number" bind:value = {result} min = "0" max = "9999999999"/>
+        <select id="rate2" name="rate2">
+          <option value="USD" selected>USD</option>
+          <option value="EUR">EUR</option>
+          <option value="RUB">RUB</option>
+        </select>
+        
+      </form>
+    </div>
+    <script type="module" src="src/main.ts"></script>
+    <script src ="main.js"></script>
   </body>
 </html>
